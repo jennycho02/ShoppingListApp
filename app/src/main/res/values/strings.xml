@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ShoppingListApp</string>
+    <string name="itemPriceString">$%1$.2f</string>
+    <string-array name="categories">
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Travel</item>
+    </string-array>
+    <string name="action_settings">Settings</string>
+</resources>
