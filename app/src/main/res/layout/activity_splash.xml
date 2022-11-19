@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/gradientbackground">
+    android:background="#ACD2ED">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"

@@ -68,6 +68,10 @@ class ShoppingListAdapter(
                 (context as ScrollingActivity).showEditDialog(listItem)
             }
 
+            listRowBinding.ibInfo.setOnClickListener {
+
+            }
+
             listRowBinding.cvItem.setOnClickListener {
                 listRowBinding.cvItem.toggle()
                 listItem.wasBought = listRowBinding.cvItem.isChecked

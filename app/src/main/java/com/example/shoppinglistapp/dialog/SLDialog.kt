@@ -10,14 +10,13 @@ import com.example.shoppinglistapp.R
 import com.example.shoppinglistapp.ScrollingActivity
 import com.example.shoppinglistapp.data.ListItem
 import com.example.shoppinglistapp.databinding.SlDialogBinding
-import java.util.*
 
 class SLDialog : DialogFragment() {
 
     interface SLDialogHandler {
-        public fun itemCreated(item: ListItem)
+        fun itemCreated(item: ListItem)
 
-        public fun itemUpdated(item: ListItem)
+        fun itemUpdated(item: ListItem)
     }
 
     lateinit var sLDialogHandler: SLDialogHandler
@@ -34,8 +33,6 @@ class SLDialog : DialogFragment() {
     }
 
     private var isEditMode = false
-
-    private lateinit var dialogViewBinding: SlDialogBinding
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialogBuilder = AlertDialog.Builder(requireContext())

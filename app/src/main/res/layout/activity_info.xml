@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ACD2ED"
+    tools:context=".InfoActivity">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#ACD2ED"
+        android:scaleType="fitCenter"
+        app:tint="#274C77" />
+
+    <ImageView
+        android:id="@+id/itemIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/item_name"
+            android:textSize="20sp"
+            android:textColor="#274C77"/>
+
+        <TextView
+            android:id="@+id/itemPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/price"
+            android:textSize="20sp"
+            android:textColor="#274C77"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/itemCategory"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textSize="20sp"
+            android:textColor="#274C77"
+            android:layout_weight="2"/>
+
+        <CheckBox
+            android:id="@+id/cb_purchased"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="@string/purchased"
+            android:buttonTint="#274C77"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/itemDesc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/item_description"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#274C77"/>
+
+</LinearLayout>

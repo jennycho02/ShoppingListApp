@@ -1,23 +1,14 @@
 package com.example.shoppinglistapp
 
-import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.animation.AnticipateInterpolator
-import android.widget.SearchView
-import androidx.core.animation.doOnEnd
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.example.shoppinglistapp.adapter.ShoppingListAdapter
-import com.example.shoppinglistapp.data.AppDatabase
 import com.example.shoppinglistapp.data.ListItem
 import com.example.shoppinglistapp.databinding.ActivityScrollingBinding
 import com.example.shoppinglistapp.dialog.SLDialog
@@ -50,7 +41,7 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = title
 
-        binding.fabAddItem.setOnClickListener { view ->
+        binding.fabAddItem.setOnClickListener {
             val listDialog = SLDialog()
             listDialog.show(supportFragmentManager, "TodoDialog")
         }
@@ -79,7 +70,7 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
         val sp = getSharedPreferences(PREF_SETTINGS, MODE_PRIVATE)
         val editor = sp.edit()
         editor.putBoolean(KEY_FIRST_START, false)
-        editor.commit()
+        editor.apply()
     }
 
     fun isItFirstStart() : Boolean {
@@ -109,8 +100,12 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
         dialog.show(supportFragmentManager, "TAG_ITEM_EDIT")
     }
 
-    override fun itemCreated(listItem: ListItem) {
-        shopListsViewModel.insertItem(listItem)
+    fun showItemDesc(itemToView: ListItem) {
+        val infoIntent = Intent(this, InfoActivity::class.java)
+    }
+
+    override fun itemCreated(item: ListItem) {
+        shopListsViewModel.insertItem(item)
 
         Snackbar.make(
             binding.root,
@@ -123,12 +118,7 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
         }.show()
     }
 
-    override fun itemUpdated(listItem: ListItem) {
-        shopListsViewModel.updateItem(listItem)
-    }
-
-    public fun setPriceText(message: String) {
-        val dialog = SLDialog()
-
+    override fun itemUpdated(item: ListItem) {
+        shopListsViewModel.updateItem(item)
     }
 }
