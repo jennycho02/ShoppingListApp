@@ -69,7 +69,7 @@ class ShoppingListAdapter(
             }
 
             listRowBinding.ibInfo.setOnClickListener {
-
+                (context as ScrollingActivity).showItemDesc(listItem)
             }
 
             listRowBinding.cvItem.setOnClickListener {

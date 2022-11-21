@@ -27,6 +27,12 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
     private lateinit var adapter: ShoppingListAdapter
     private lateinit var shopListsViewModel: ListViewModel
 
+    val KEY_DESC = "KEY_DESC"
+    val KEY_PRICE = "KEY_PRICE"
+    val KEY_NAME = "KEY_NAME"
+    val KEY_CATEGORY = "KEY_CATEGORY"
+    val KEY_PURCHASED = "KEY_PURCHASED"
+
     @SuppressLint("NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,6 +108,14 @@ class ScrollingActivity : AppCompatActivity(), SLDialog.SLDialogHandler {
 
     fun showItemDesc(itemToView: ListItem) {
         val infoIntent = Intent(this, InfoActivity::class.java)
+        val bundle = Bundle()
+        bundle.putString(KEY_DESC, itemToView.itemDesc)
+        bundle.putString(KEY_NAME, itemToView.itemTitle)
+        bundle.putInt(KEY_CATEGORY, itemToView.itemCat)
+        bundle.putString(KEY_PRICE, itemToView.itemPrice)
+        bundle.putBoolean(KEY_PURCHASED, itemToView.wasBought)
+        infoIntent.putExtras(bundle)
+        startActivity(infoIntent)
     }
 
     override fun itemCreated(item: ListItem) {

@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/etItemTitle"
-        android:hint="Enter item here"
+        android:hint="@string/enter_item_here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -15,7 +15,7 @@
         android:id="@+id/etItemDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter item description here"/>
+        android:hint="@string/enter_item_description_here"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
 
         <EditText
             android:id="@+id/etItemPrice"
-            android:hint="Enter price here"
+            android:hint="@string/enter_price_here"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
@@ -43,6 +43,6 @@
         android:id="@+id/cb_purchased"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Purchased" />
+        android:text="@string/purchased" />
 
 </LinearLayout>

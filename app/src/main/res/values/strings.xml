@@ -13,4 +13,11 @@
     <string name="item_description">Item Description</string>
     <string name="purchased">Purchased</string>
     <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="enter_item_here">Enter item here</string>
+    <string name="enter_item_description_here">Enter item description here</string>
+    <string name="enter_price_here">Enter price here</string>
+    <string name="food">Food</string>
+    <string name="travel">Travel</string>
+    <string name="clothing">Clothing</string>
 </resources>
